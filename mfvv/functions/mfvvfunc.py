@@ -1,15 +1,12 @@
 from datetime import date
 
-
-def calculate_age(born: str) -> int:
+def calculate_age(birth_date):
     today = date.today()
-    try:
-        birthday = born.replace(year=today.year)
-    except ValueError: # raised when birth date is February 29 and the current year is not a leap year
-        birthday = born.replace(year=today.year, month=born.month+1, day=1)
-    if birthday > today:
-        return today.year - born.year - 1
-    else:
-        return today.year - born.year
+    y = today.year - birth_date.year
+    if today.month < birth_date.month or today.month == birth_date.month and today.day < birth_date.day:
+        y -= 1
+    return y
 
 
+if __name__ == '__main__':
+    print(calculate_age(date(1965, 9, 27)))
