@@ -243,7 +243,7 @@
     </property>
    </item>
   </widget>
-  <widget class="QCheckBox" name="checkBox">
+  <widget class="QCheckBox" name="cB_whatsapp">
    <property name="geometry">
     <rect>
      <x>350</x>
@@ -272,7 +272,7 @@
     <string>Geburtstag</string>
    </property>
   </widget>
-  <widget class="QDateEdit" name="dateEdit">
+  <widget class="QDateEdit" name="dE_geburtstag">
    <property name="geometry">
     <rect>
      <x>130</x>
@@ -288,7 +288,7 @@
   <widget class="QLabel" name="label_10">
    <property name="geometry">
     <rect>
-     <x>260</x>
+     <x>427</x>
      <y>350</y>
      <width>68</width>
      <height>22</height>
@@ -298,12 +298,12 @@
     <string>Alter</string>
    </property>
   </widget>
-  <widget class="QCheckBox" name="checkBox_2">
+  <widget class="QCheckBox" name="cB_Kalender">
    <property name="geometry">
     <rect>
-     <x>430</x>
+     <x>250</x>
      <y>350</y>
-     <width>191</width>
+     <width>161</width>
      <height>27</height>
     </rect>
    </property>
@@ -317,9 +317,9 @@
   <widget class="QLCDNumber" name="lcdNumber">
    <property name="geometry">
     <rect>
-     <x>310</x>
+     <x>420</x>
      <y>350</y>
-     <width>64</width>
+     <width>121</width>
      <height>23</height>
     </rect>
    </property>
@@ -343,7 +343,7 @@
     <string>Eintritt</string>
    </property>
   </widget>
-  <widget class="QDateEdit" name="dateEdit_2">
+  <widget class="QDateEdit" name="dE_eintritt">
    <property name="geometry">
     <rect>
      <x>130</x>
@@ -369,7 +369,7 @@
     <string>Austritt</string>
    </property>
   </widget>
-  <widget class="QDateEdit" name="dateEdit_3">
+  <widget class="QDateEdit" name="dE_austritt">
    <property name="geometry">
     <rect>
      <x>310</x>
@@ -395,7 +395,7 @@
     <string>Gestorben</string>
    </property>
   </widget>
-  <widget class="QDateEdit" name="dateEdit_4">
+  <widget class="QDateEdit" name="dE_gestorben">
    <property name="geometry">
     <rect>
      <x>510</x>
@@ -439,7 +439,7 @@
     <string>TextLabel</string>
    </property>
   </widget>
-  <widget class="QCheckBox" name="checkBox_3">
+  <widget class="QCheckBox" name="cB_telegram">
    <property name="geometry">
     <rect>
      <x>450</x>
@@ -454,6 +454,207 @@
    <property name="text">
     <string>Telegram</string>
    </property>
+  </widget>
+  <widget class="QLabel" name="label_14">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>420</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Beitrag</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lE_beitrag">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>420</y>
+     <width>91</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="maxLength">
+    <number>8</number>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_beitrag">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>420</y>
+     <width>71</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>ermitteln</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="cb_beitrag_gruppe">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>420</y>
+     <width>201</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Schüler</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Rentner</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Erwachsener</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label_15">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>470</y>
+     <width>111</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Bankverbindung</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lE_iban">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>470</y>
+     <width>241</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_16">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>450</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>IBAN</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_17">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>450</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>BIC</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="LE_bic">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>470</y>
+     <width>131</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_18">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>510</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Funktion</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="cB_funktion">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>510</y>
+     <width>241</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Mitglied</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>1. Vorsitzender</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>2. Vorsitzender</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>1. Kassierer</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>2. Kassierer</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>1. Kassenprüfer</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>2. Kassenprüfer</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Platzwart</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Flugleiter</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Jugendleiter</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Datenschutzbeauftragter</string>
+    </property>
+   </item>
   </widget>
  </widget>
  <resources/>
