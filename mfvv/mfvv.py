@@ -1,4 +1,7 @@
 import platform
+import sys
+from PyQt5 import QtWidgets, QtCore, uic
+import functions.textspeech as ts
 
 
 def load_config(cfg_file: str) -> dict:
@@ -26,14 +29,44 @@ def db_system(db: str):
 
 
 def main():
+
+    class MainDialog(QtWidgets.QMainWindow):
+        def __init__(self, parent=None):
+            super().__init__(parent)
+            self.ui = uic.loadUi("Main.ui", self)
+            # Slots einrichten
+            #self.ui.buttonOK.clicked.connect(self.onOK)
+            #self.ui.buttonAbbrechen.clicked.connect(self.onAbbrechen)
+            self.ui.btn_stammdaten.clicked.connect(self.onStammdaten)
+
+        def onStammdaten(self):
+            pass
+
+        def onOK(self):
+            # Daten auslesen
+            print("Vorname: {}".format(self.ui.vorname.text()))
+            print("Nachname: {}".format(self.ui.nachname.text()))
+            print("Adresse: {}".format(self.ui.adresse.toPlainText()))
+            datum = self.ui.geburtsdatum.date().toString("dd.MM.yyyy")
+            print("Geburtsdatum: {}".format(datum))
+            if self.ui.agb.checkState():
+                print("AGBs akzeptiert")
+            if self.ui.katalog.checkState():
+                print("Katalog bestellt")
+            self.close()
+
+        def onAbbrechen(self):
+            self.close()
+
+
     operating_system = check_os()
     mfvv_config = load_config("mfvv.cfg")
     db_sys = db_system(mfvv_config.get("db_system"))
-
-    print(f"Betriebsystem  : {operating_system}")
-    print(f"Datenbanksystem: {db_sys}")
-
-
+    ts.txt2speech("Willkomen zur Modellflugvereinsverwaltung", 'de', slow=False)
+    app = QtWidgets.QApplication(sys.argv)
+    dialog = MainDialog()
+    dialog.show()
+    sys.exit(app.exec_())
 
 if __name__ == '__main__':
     main()
