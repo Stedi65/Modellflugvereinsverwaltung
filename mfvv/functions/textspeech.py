@@ -8,3 +8,10 @@ def txt2speech(txt: str, lang: str, slow=False):
     playsound("tts.mp3")
 
 
+if __name__ == '__main__':
+    text = "Was ist letzte Preis?"
+    txt2speech(text, 'ru')
+
+
+
+
