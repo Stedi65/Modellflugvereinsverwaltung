@@ -47,15 +47,21 @@ class MainDialog(QtWidgets.QMainWindow):
         pass
 
     def ShowInfo(self):
-        def clickedOK():
-            infodialog.close()
-
-        infodialog = uic.loadUi("info.ui")
-        infodialog.btn_OK.clicked.connect(clickedOK)
+        infodialog = InfoDialog()
         infodialog.show()
 
     def onBeenden(self):
         self.close()
+
+
+class InfoDialog(QtWidgets.QDialog):
+    def __init__(self):
+        super().__init__()
+        self.ui = uic.loadUi("info.ui", self)
+        self.ui.btn_OK.clicked.connect(self.clickedOK)
+
+    def clickedOK(self):
+        self.ui.close()
 
 
 def main():
