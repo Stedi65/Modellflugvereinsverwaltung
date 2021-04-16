@@ -34,10 +34,9 @@ class MainDialog(QtWidgets.QMainWindow):
         super().__init__(parent)
         self.ui = uic.loadUi("Main.ui", self)
         # Slots einrichten
-        #self.ui.buttonOK.clicked.connect(self.onOK)
-        #self.ui.buttonAbbrechen.clicked.connect(self.onAbbrechen)
         self.ui.btn_stammdaten.clicked.connect(self.onStammdaten)
         self.ui.pb_info.clicked.connect(self.ShowInfo)
+        self.ui.actionProgramm_beenden.triggered.connect(self.onBeenden)
 
     def onStammdaten(self):
         pass
@@ -50,21 +49,7 @@ class MainDialog(QtWidgets.QMainWindow):
         infodialog.btn_OK.clicked.connect(clickedOK)
         infodialog.show()
 
-
-    def onOK(self):
-        # Daten auslesen
-        print("Vorname: {}".format(self.ui.vorname.text()))
-        print("Nachname: {}".format(self.ui.nachname.text()))
-        print("Adresse: {}".format(self.ui.adresse.toPlainText()))
-        datum = self.ui.geburtsdatum.date().toString("dd.MM.yyyy")
-        print("Geburtsdatum: {}".format(datum))
-        if self.ui.agb.checkState():
-            print("AGBs akzeptiert")
-        if self.ui.katalog.checkState():
-            print("Katalog bestellt")
-        self.close()
-
-    def onAbbrechen(self):
+    def onBeenden(self):
         self.close()
 
 
