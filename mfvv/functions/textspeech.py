@@ -9,8 +9,8 @@ def txt2speech(txt: str, lang: str, slow=False):
 
 
 if __name__ == '__main__':
-    text = "Was ist letzte Preis?"
-    txt2speech(text, 'ru')
+    text = "Sanitär Heizung Schwimmbadtechnik Röhrich    rütütü"
+    txt2speech(text, 'de')
 
 
 

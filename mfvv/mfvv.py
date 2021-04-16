@@ -28,36 +28,47 @@ def db_system(db: str):
     return db_systems.get(db.lower())
 
 
+
+class MainDialog(QtWidgets.QMainWindow):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.ui = uic.loadUi("Main.ui", self)
+        # Slots einrichten
+        #self.ui.buttonOK.clicked.connect(self.onOK)
+        #self.ui.buttonAbbrechen.clicked.connect(self.onAbbrechen)
+        self.ui.btn_stammdaten.clicked.connect(self.onStammdaten)
+        self.ui.pb_info.clicked.connect(self.ShowInfo)
+
+    def onStammdaten(self):
+        pass
+
+    def ShowInfo(self):
+        def clickedOK():
+            infodialog.close()
+
+        infodialog = uic.loadUi("info.ui")
+        infodialog.btn_OK.clicked.connect(clickedOK)
+        infodialog.show()
+
+
+    def onOK(self):
+        # Daten auslesen
+        print("Vorname: {}".format(self.ui.vorname.text()))
+        print("Nachname: {}".format(self.ui.nachname.text()))
+        print("Adresse: {}".format(self.ui.adresse.toPlainText()))
+        datum = self.ui.geburtsdatum.date().toString("dd.MM.yyyy")
+        print("Geburtsdatum: {}".format(datum))
+        if self.ui.agb.checkState():
+            print("AGBs akzeptiert")
+        if self.ui.katalog.checkState():
+            print("Katalog bestellt")
+        self.close()
+
+    def onAbbrechen(self):
+        self.close()
+
+
 def main():
-
-    class MainDialog(QtWidgets.QMainWindow):
-        def __init__(self, parent=None):
-            super().__init__(parent)
-            self.ui = uic.loadUi("Main.ui", self)
-            # Slots einrichten
-            #self.ui.buttonOK.clicked.connect(self.onOK)
-            #self.ui.buttonAbbrechen.clicked.connect(self.onAbbrechen)
-            self.ui.btn_stammdaten.clicked.connect(self.onStammdaten)
-
-        def onStammdaten(self):
-            pass
-
-        def onOK(self):
-            # Daten auslesen
-            print("Vorname: {}".format(self.ui.vorname.text()))
-            print("Nachname: {}".format(self.ui.nachname.text()))
-            print("Adresse: {}".format(self.ui.adresse.toPlainText()))
-            datum = self.ui.geburtsdatum.date().toString("dd.MM.yyyy")
-            print("Geburtsdatum: {}".format(datum))
-            if self.ui.agb.checkState():
-                print("AGBs akzeptiert")
-            if self.ui.katalog.checkState():
-                print("Katalog bestellt")
-            self.close()
-
-        def onAbbrechen(self):
-            self.close()
-
 
     operating_system = check_os()
     mfvv_config = load_config("mfvv.cfg")
