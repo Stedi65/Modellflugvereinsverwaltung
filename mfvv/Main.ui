@@ -258,7 +258,7 @@
     <property name="title">
      <string>Hilfe</string>
     </property>
-    <addaction name="actionInfo_ber"/>
+    <addaction name="actionInfo_ueber"/>
     <addaction name="actionHilfe"/>
    </widget>
    <widget class="QMenu" name="menuFinanzen">
@@ -277,7 +277,7 @@
    <addaction name="menuHilfe"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionInfo_ber">
+  <action name="actionInfo_ueber">
    <property name="text">
     <string>Info Über ...</string>
    </property>

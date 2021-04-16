@@ -41,6 +41,7 @@ class MainDialog(QtWidgets.QMainWindow):
         self.ui.btn_stammdaten.clicked.connect(self.onStammdaten)
         self.ui.pb_info.clicked.connect(self.ShowInfo)
         self.ui.actionProgramm_beenden.triggered.connect(self.onBeenden)
+        self.ui.actionInfo_ueber.triggered.connect(self.ShowInfo)
 
     def onStammdaten(self):
         pass
@@ -60,9 +61,9 @@ class MainDialog(QtWidgets.QMainWindow):
 def main():
 
     operating_system = check_os()
-    mfvv_config = load_config("mfvv.cfg")
-    db_sys = db_system(mfvv_config.get("db_system"))
-    if mfvv_config.get("sound") == "on":
+    mfvv_cfg = load_config("mfvv.cfg")
+    db_sys = db_system(mfvv_cfg.get("db_system"))
+    if mfvv_cfg.get("sound") == "on":
         ts.txt2speech("Willkomen zur Modellflugvereinsverwaltung", 'de', slow=False)
     app = QtWidgets.QApplication(sys.argv)
     dialog = MainDialog()
