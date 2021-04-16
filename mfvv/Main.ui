@@ -203,9 +203,19 @@
     <property name="title">
      <string>Stammdaten</string>
     </property>
-    <addaction name="actionVereinsdaten"/>
+    <widget class="QMenu" name="menuVereinsdaten">
+     <property name="title">
+      <string>Vereinsdaten</string>
+     </property>
+     <addaction name="actionVorstand"/>
+     <addaction name="actionBeitrag"/>
+     <addaction name="actionBeitragsgruppen"/>
+    </widget>
+    <addaction name="menuVereinsdaten"/>
+    <addaction name="actionUser"/>
     <addaction name="separator"/>
     <addaction name="actionProgramm_beenden"/>
+    <addaction name="separator"/>
    </widget>
    <widget class="QMenu" name="menuMitglieder">
     <property name="title">
@@ -337,14 +347,29 @@
     <string>Veranstaltungen</string>
    </property>
   </action>
-  <action name="actionVereinsdaten">
-   <property name="text">
-    <string>Vereinsdaten</string>
-   </property>
-  </action>
   <action name="actionProgramm_beenden">
    <property name="text">
     <string>Programm beenden</string>
+   </property>
+  </action>
+  <action name="actionVorstand">
+   <property name="text">
+    <string>Vorstand</string>
+   </property>
+  </action>
+  <action name="actionUser">
+   <property name="text">
+    <string>User</string>
+   </property>
+  </action>
+  <action name="actionBeitrag">
+   <property name="text">
+    <string>Beitrag</string>
+   </property>
+  </action>
+  <action name="actionBeitragsgruppen">
+   <property name="text">
+    <string>Beitragsgruppen</string>
    </property>
   </action>
  </widget>
