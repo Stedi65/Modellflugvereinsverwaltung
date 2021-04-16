@@ -5,6 +5,7 @@ import platform
 import sys
 from PyQt5 import QtWidgets, QtCore, uic
 import functions.textspeech as ts
+import functions.mfvvfunc as mf
 
 
 def load_config(cfg_file: str) -> dict:
@@ -74,6 +75,7 @@ class MitgliedForm(QtWidgets.QDialog):
         self.ui = uic.loadUi("Mitglied.ui", self)
         self.ui.pB_OK.clicked.connect(self.clickedOK)
         self.ui.pB_Abbrechen.clicked.connect(self.clickedAbbrechen)
+        self.ui.lcd_Alter.display(mf.calculate_age(self.ui.dE_geburtstag.date))
 
     def clickedOK(self):
         # Eingaben in Datenbank schreiben
