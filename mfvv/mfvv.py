@@ -25,6 +25,7 @@ def check_os():
 def db_system(db: str):
     db_systems = {
         'sqlite3':'db_modul_sqlite',
+        'PostgreSQL':'db_modul_postgresql',
         'mysql': 'db_modul_mysql',
         'mariadb': 'db_modul_mariadb'
     }

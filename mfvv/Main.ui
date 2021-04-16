@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>555</width>
+    <width>717</width>
     <height>376</height>
    </rect>
   </property>
@@ -195,7 +195,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>555</width>
+     <width>717</width>
      <height>22</height>
     </rect>
    </property>
@@ -207,11 +207,13 @@
      <property name="title">
       <string>Vereinsdaten</string>
      </property>
+     <addaction name="actionVereinsdaten_2"/>
      <addaction name="actionVorstand"/>
      <addaction name="actionBeitrag"/>
      <addaction name="actionBeitragsgruppen"/>
     </widget>
     <addaction name="menuVereinsdaten"/>
+    <addaction name="actionAdressen"/>
     <addaction name="actionUser"/>
     <addaction name="separator"/>
     <addaction name="actionProgramm_beenden"/>
@@ -259,8 +261,16 @@
     <addaction name="actionInfo_ber"/>
     <addaction name="actionHilfe"/>
    </widget>
+   <widget class="QMenu" name="menuFinanzen">
+    <property name="title">
+     <string>Finanzen</string>
+    </property>
+    <addaction name="actionBuchungen"/>
+    <addaction name="actionKonten"/>
+   </widget>
    <addaction name="menuStammdaten"/>
    <addaction name="menuMitglieder"/>
+   <addaction name="menuFinanzen"/>
    <addaction name="menuDokumente"/>
    <addaction name="menuKalender"/>
    <addaction name="menuEinstellungen"/>
@@ -370,6 +380,26 @@
   <action name="actionBeitragsgruppen">
    <property name="text">
     <string>Beitragsgruppen</string>
+   </property>
+  </action>
+  <action name="actionVereinsdaten_2">
+   <property name="text">
+    <string>Vereinsdaten</string>
+   </property>
+  </action>
+  <action name="actionBuchungen">
+   <property name="text">
+    <string>Buchungen</string>
+   </property>
+  </action>
+  <action name="actionKonten">
+   <property name="text">
+    <string>Konten</string>
+   </property>
+  </action>
+  <action name="actionAdressen">
+   <property name="text">
+    <string>Adressen</string>
    </property>
   </action>
  </widget>
