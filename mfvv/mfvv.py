@@ -70,7 +70,7 @@ def main():
     mfvv_cfg = load_config("mfvv.cfg")
     db_sys = db_system(mfvv_cfg.get("db_system"))
     if mfvv_cfg.get("sound") == "on":
-        ts.txt2speech("Willkomen zur Modellflugvereinsverwaltung", 'de', slow=False)
+        ts.txt2speech("Willkommen zur Modellflugvereinsverwaltung", 'de', slow=False)
     app = QtWidgets.QApplication(sys.argv)
     dialog = MainDialog()
     dialog.show()
