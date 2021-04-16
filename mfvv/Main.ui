@@ -223,7 +223,7 @@
     <property name="title">
      <string>Mitglieder</string>
     </property>
-    <addaction name="actionNeu"/>
+    <addaction name="actionNeuMitglied"/>
     <addaction name="action_ndern"/>
     <addaction name="actionSuchen"/>
     <addaction name="actionListe"/>
@@ -287,7 +287,7 @@
     <string>Hilfe</string>
    </property>
   </action>
-  <action name="actionNeu">
+  <action name="actionNeuMitglied">
    <property name="text">
     <string>Neu</string>
    </property>

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>639</width>
-    <height>702</height>
+    <height>786</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -644,7 +644,7 @@
    <property name="geometry">
     <rect>
      <x>410</x>
-     <y>670</y>
+     <y>740</y>
      <width>89</width>
      <height>25</height>
     </rect>
@@ -657,7 +657,7 @@
    <property name="geometry">
     <rect>
      <x>530</x>
-     <y>670</y>
+     <y>740</y>
      <width>89</width>
      <height>25</height>
     </rect>
@@ -666,7 +666,7 @@
     <string>Abbrechen</string>
    </property>
   </widget>
-  <widget class="QGraphicsView" name="graphicsView">
+  <widget class="QGraphicsView" name="gV_Foto">
    <property name="geometry">
     <rect>
      <x>340</x>
@@ -676,17 +676,40 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLabel" name="label_19">
+  <widget class="QPushButton" name="pb_Foto">
    <property name="geometry">
     <rect>
-     <x>300</x>
+     <x>240</x>
      <y>80</y>
-     <width>41</width>
-     <height>17</height>
+     <width>89</width>
+     <height>25</height>
     </rect>
    </property>
    <property name="text">
     <string>Foto</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_19">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>670</y>
+     <width>101</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Bermerkung</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="textEdit">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>670</y>
+     <width>261</width>
+     <height>91</height>
+    </rect>
    </property>
   </widget>
  </widget>

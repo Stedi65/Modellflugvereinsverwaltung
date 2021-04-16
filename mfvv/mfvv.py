@@ -32,7 +32,6 @@ def db_system(db: str):
     return db_systems.get(db.lower())
 
 
-
 class MainDialog(QtWidgets.QMainWindow):
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -42,6 +41,7 @@ class MainDialog(QtWidgets.QMainWindow):
         self.ui.pb_info.clicked.connect(self.ShowInfo)
         self.ui.actionProgramm_beenden.triggered.connect(self.onBeenden)
         self.ui.actionInfo_ueber.triggered.connect(self.ShowInfo)
+        self.ui.actionNeuMitglied.triggered.connect(self.NewMitglied)
 
     def onStammdaten(self):
         pass
@@ -49,6 +49,10 @@ class MainDialog(QtWidgets.QMainWindow):
     def ShowInfo(self):
         infodialog = InfoDialog()
         infodialog.show()
+
+    def NewMitglied(self):
+        nm_dialog = MitgliedForm()
+        nm_dialog.show()
 
     def onBeenden(self):
         self.close()
@@ -64,6 +68,25 @@ class InfoDialog(QtWidgets.QDialog):
         self.ui.close()
 
 
+class MitgliedForm(QtWidgets.QDialog):
+    def __init__(self):
+        super().__init__()
+        self.ui = uic.loadUi("Mitglied.ui", self)
+        self.ui.pB_OK.clicked.connect(self.clickedOK)
+        self.ui.pB_Abbrechen.clicked.connect(self.clickedAbbrechen)
+
+    def clickedOK(self):
+        # Eingaben in Datenbank schreiben
+        self.Write_Mitglied_db()
+        self.ui.close()
+
+    def clickedAbbrechen(self):
+        self.ui.close()
+
+    def Write_Mitglied_db(self):
+        pass
+
+
 def main():
 
     operating_system = check_os()
@@ -75,6 +98,7 @@ def main():
     dialog = MainDialog()
     dialog.show()
     sys.exit(app.exec_())
+
 
 if __name__ == '__main__':
     main()
