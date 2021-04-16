@@ -9,7 +9,7 @@ def txt2speech(txt: str, lang: str, slow=False):
 
 
 if __name__ == '__main__':
-    text = "Sanitär Heizung Schwimmbadtechnik Röhrich    rütütü"
+    text = "Sanitär Heizung Schwimmbadtechnik Röhrich"
     txt2speech(text, 'de')
 
 
