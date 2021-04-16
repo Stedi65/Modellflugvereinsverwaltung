@@ -1,3 +1,6 @@
+# Ja, das MVC Pattern fehlt noch. ;-)
+# Kommt dann im nächsten Schritt
+
 import platform
 import sys
 from PyQt5 import QtWidgets, QtCore, uic
