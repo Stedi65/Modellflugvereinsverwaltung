@@ -33,6 +33,10 @@ def db_system(db: str):
     return db_systems.get(db.lower())
 
 
+def date_convert(qDate):
+    return ('{0}-{1}-{2}'.format(qDate.year(), qDate.month(), qDate.day()))
+
+
 class MainDialog(QtWidgets.QMainWindow):
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -91,11 +95,11 @@ class MitgliedForm(QtWidgets.QDialog):
             "whatsapp_erlaubt": mf.bool2int(self.ui.cB_whatsapp.isChecked()),
             "telegram_erlaubt":  mf.bool2int(self.ui.cB_telegram.isChecked()),
             "email": self.ui.lE_Email.text(),
-            "geburtstag": self.ui.dE_geburtstag.date(),
+            "geburtstag": date_convert(self.ui.dE_geburtstag.date()),
             "geb_anzeigen": mf.bool2int(self.ui.cB_GebKalender.isChecked()),
-            "eintritt": self.ui.dE_Eintritt.date(),
-            "austritt": self.ui.dE_Austritt.date(),
-            "gestorben": self.ui.dE_gestorben.date(),
+            "eintritt": date_convert(self.ui.dE_Eintritt.date()),
+            "austritt": date_convert(self.ui.dE_Austritt.date()),
+            "gestorben": date_convert(self.ui.dE_gestorben.date()),
             "beitrag": float(self.ui.lE_Beitrag.text()),
             "IBAN": self.ui.lE_iban.text(),
             "bank": self.ui.lE_Bank.text(),
