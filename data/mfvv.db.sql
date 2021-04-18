@@ -54,7 +54,8 @@ CREATE TABLE IF NOT EXISTS "verein" (
 	"bank1"	TEXT,
 	"iban2"	TEXT,
 	"bic2"	TEXT,
-	"bank2"	TEXT
+	"bank2"	TEXT,
+	"logo_dateiname"	TEXT
 );
 CREATE TABLE IF NOT EXISTS "vorstand" (
 	"funktion"	TEXT,
@@ -110,6 +111,21 @@ CREATE TABLE IF NOT EXISTS "buchungen" (
 	"betrag"	REAL,
 	"gegenkonto"	TEXT,
 	"einnahmeausgabe"	TEXT,
+	PRIMARY KEY("nummer" AUTOINCREMENT)
+);
+CREATE TABLE IF NOT EXISTS "laermpass" (
+	"nummer"	INTEGER NOT NULL UNIQUE,
+	"flugmodellnr"	INTEGER,
+	"messort"	TEXT,
+	"messdatum"	TEXT,
+	"messzeit"	TEXT,
+	"messbeauftragter"	INTEGER,
+	"niederschlag"	TEXT,
+	"windgeschwindigkeit"	REAL,
+	"temperatur"	INTEGER,
+	"schallmessgeraet"	TEXT,
+	"windmessgeraet"	TEXT,
+	"thermometer"	TEXT,
 	PRIMARY KEY("nummer" AUTOINCREMENT)
 );
 COMMIT;

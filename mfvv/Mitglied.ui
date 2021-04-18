@@ -25,6 +25,12 @@
      <height>32</height>
     </rect>
    </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="maxLength">
+    <number>40</number>
+   </property>
   </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
@@ -285,7 +291,7 @@
     <string>Alter</string>
    </property>
   </widget>
-  <widget class="QCheckBox" name="cB_Kalender">
+  <widget class="QCheckBox" name="cB_GebKalender">
    <property name="geometry">
     <rect>
      <x>250</x>
@@ -330,19 +336,6 @@
     <string>Eintritt</string>
    </property>
   </widget>
-  <widget class="QDateEdit" name="dE_eintritt">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>500</y>
-     <width>110</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="displayFormat">
-    <string>dd.MM.yyyy</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_12">
    <property name="geometry">
     <rect>
@@ -356,7 +349,7 @@
     <string>Austritt</string>
    </property>
   </widget>
-  <widget class="QDateEdit" name="dE_austritt">
+  <widget class="QDateEdit" name="dE_Austritt">
    <property name="geometry">
     <rect>
      <x>310</x>
@@ -455,7 +448,7 @@
     <string>Beitrag</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lE_beitrag">
+  <widget class="QLineEdit" name="lE_Beitrag">
    <property name="geometry">
     <rect>
      <x>130</x>
@@ -481,7 +474,7 @@
     <string>ermitteln</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="cb_beitrag_gruppe">
+  <widget class="QComboBox" name="cbox_beitrag_gruppe">
    <property name="geometry">
     <rect>
      <x>320</x>
@@ -555,7 +548,7 @@
     <string>Bank</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="LE_bic">
+  <widget class="QLineEdit" name="lE_Bank">
    <property name="geometry">
     <rect>
      <x>380</x>
@@ -578,7 +571,7 @@
     <string>Funktion</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="cB_funktion">
+  <widget class="QComboBox" name="cBox_Funktion">
    <property name="geometry">
     <rect>
      <x>130</x>
@@ -713,6 +706,19 @@
      <width>261</width>
      <height>91</height>
     </rect>
+   </property>
+  </widget>
+  <widget class="QDateEdit" name="dE_Eintritt">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>500</y>
+     <width>110</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="displayFormat">
+    <string>dd.MM.yyyy</string>
    </property>
   </widget>
  </widget>

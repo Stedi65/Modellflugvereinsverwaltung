@@ -75,18 +75,42 @@ class MitgliedForm(QtWidgets.QDialog):
         self.ui = uic.loadUi("Mitglied.ui", self)
         self.ui.pB_OK.clicked.connect(self.clickedOK)
         self.ui.pB_Abbrechen.clicked.connect(self.clickedAbbrechen)
-        self.ui.lcd_Alter.display(mf.calculate_age(self.ui.dE_geburtstag.date))
+        #self.ui.lcd_Alter.display(mf.calculate_age(self.ui.dE_geburtstag.date))
 
     def clickedOK(self):
         # Eingaben in Datenbank schreiben
-        self.Write_Mitglied_db()
+        data = {
+            "anrede": self.ui.cB_Anrede.currentText(),
+            "vorname": self.ui.lE_Vorname.text(),
+            "name": self.ui.lE_Nachname.text(),
+            "strasse": self.ui.lE_Strasse.text(),
+            "plz": self.ui.lE_PLZ.text(),
+            "ort": self.ui.lE_Ort.text(),
+            "telefon": self.ui.lE_Telefon.text(),
+            "mobiltel": self.ui.lE_Mobil.text(),
+            "whatsapp_erlaubt": mf.bool2int(self.ui.cB_whatsapp.isChecked()),
+            "telegram_erlaubt":  mf.bool2int(self.ui.cB_telegram.isChecked()),
+            "email": self.ui.lE_Email.text(),
+            "geburtstag": self.ui.dE_geburtstag.date(),
+            "geb_anzeigen": mf.bool2int(self.ui.cB_GebKalender.isChecked()),
+            "eintritt": self.ui.dE_Eintritt.date(),
+            "austritt": self.ui.dE_Austritt.date(),
+            "gestorben": self.ui.dE_gestorben.date(),
+            "beitrag": float(self.ui.lE_Beitrag.text()),
+            "IBAN": self.ui.lE_iban.text(),
+            "bank": self.ui.lE_Bank.text(),
+            "funktion": self.ui.cBox_Funktion.currentText(),
+
+        }
+        self.Write_Mitglied_db(data)
         self.ui.close()
 
     def clickedAbbrechen(self):
         self.ui.close()
 
-    def Write_Mitglied_db(self):
-        pass
+    def Write_Mitglied_db(self, data):
+        print(data)
+
 
 
 def main():
