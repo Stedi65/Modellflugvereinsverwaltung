@@ -1,5 +1,6 @@
 gTTS==2.2.2
 mysql-connector-python==8.0.23
+pymysql==1.0.2
 playsound==1.2.2
 PyPDF2==1.26.0
 PyQt5==5.15.2
@@ -8,4 +9,5 @@ PyQt5-stubs==5.15.2.0
 PySide2==5.15.2
 qrcode==6.1
 simplejson==3.17.0
+sqlalchemy==1.4.9
 

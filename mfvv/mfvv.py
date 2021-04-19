@@ -6,6 +6,7 @@ import sys
 from PyQt5 import QtWidgets, QtCore, uic
 import functions.textspeech as ts
 import functions.mfvvfunc as mf
+import functions.db_func as db
 
 
 def load_config(cfg_file: str) -> dict:
@@ -125,7 +126,13 @@ def main():
 
     operating_system = check_os()
     mfvv_cfg = load_config("mfvv.cfg")
-    db_sys = db_system(mfvv_cfg.get("db_system"))
+    db_sys = db.db_system(mfvv_cfg.get("db_system"))
+    db_host = mfvv_cfg.get("db_host")
+    db_port = mfvv_cfg.get("db_port")
+    db_user = mfvv_cfg.get("db_user")
+    db_password = mfvv_cfg.get("db_password")
+    db_name = mfvv_cfg.get("database")
+    db_engine = db.create_db_engine(db_sys, db_user, db_password, db_host, db_port, db_name)
     if mfvv_cfg.get("sound") == "on":
         ts.txt2speech("Willkommen zur Modellflugvereinsverwaltung", 'de', slow=False)
     app = QtWidgets.QApplication(sys.argv)
