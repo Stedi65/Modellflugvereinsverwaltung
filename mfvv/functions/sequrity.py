@@ -41,11 +41,13 @@ def footprint(pk):
     hasher = SHA256.new(pk)
     return hasher.digest()
 
-#key = generate_sk()
-key = import_key('secret_key.pem')
-pk = generate_pk(key)
-c = encrypt(pk, b"Hallo Welt")
-print(c)
-m = decrypt(key, c)
-print(m)
-print(footprint(pk.export_key(format='PEM')))
+
+if __name__ == '__main__':
+    #key = generate_sk()
+    key = import_key('secret_key.pem')
+    pk = generate_pk(key)
+    c = encrypt(pk, b"Hallo Welt")
+    print(c)
+    m = decrypt(key, c)
+    print(m)
+    print(footprint(pk.export_key(format='PEM')))

@@ -33,7 +33,7 @@ def db_system(db: str):
     return db_systems.get(db.lower())
 
 
-def date_convert(qDate):
+def date_convert(qDate) -> str:
     return ('{0}-{1}-{2}'.format(qDate.year(), qDate.month(), qDate.day()))
 
 
@@ -53,11 +53,11 @@ class MainDialog(QtWidgets.QMainWindow):
 
     def ShowInfo(self):
         infodialog = InfoDialog()
-        infodialog.show()
+        infodialog.exec()
 
     def NewMitglied(self):
         nm_dialog = MitgliedForm()
-        nm_dialog.show()
+        nm_dialog.exec()
 
     def onBeenden(self):
         self.close()
@@ -112,9 +112,13 @@ class MitgliedForm(QtWidgets.QDialog):
     def clickedAbbrechen(self):
         self.ui.close()
 
-    def Write_Mitglied_db(self, data):
-        print(data)
-
+    def Write_Mitglied_db(self, my_dict):
+        columns = ', '.join(my_dict.keys())
+        placeholders = ':' + ', :'.join(my_dict.keys())
+        sql_query = 'INSERT INTO mitglieder (%s) VALUES (%s)' % (columns, placeholders)
+        print(sql_query)
+        #cur.execute(query, my_dict)
+        #con.commit()
 
 
 def main():
