@@ -12,17 +12,19 @@ def db_system(db: str):
 
 
 def create_db_engine(db_sys: str, user: str, password: str, host: str, port: str, name: str):
-    engine = ""
+    e = ""
     if db_sys == 'sqlite3':
-        engine = create_engine(f'sqlite:///data{name}')
+        e = (f'sqlite:///data/{name}')
 
     if db_sys == 'PostgreSQL':
-        engine = create_engine(f'postgresql+pg8000:/{user}:{password}@{host}/data/{name}')
+        e = (f'postgresql+pg8000:/{user}:{password}@{host}/data/{name}')
 
     if db_sys == 'mysql':
-        engine = create_engine(f'mysql+pymysql://{user}:{password}@{host}:{port}/data/{name}?charset=utf8mb4')
+        e = (f'mysql+pymysql://{user}:{password}@{host}:{port}/data/{name}?charset=utf8mb4')
 
     if db_sys == 'mariadb':
-        engine = create_engine(f'mariadb+pymysql://{user}:{password}@{host}:{port}/data/{name}?charset=utf8mb4')
+        e = (f'mariadb+pymysql://{user}:{password}@{host}:{port}/data/{name}?charset=utf8mb4')
+
+    engine = create_engine(e)
 
     return engine

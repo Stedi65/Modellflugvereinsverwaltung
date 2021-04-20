@@ -226,15 +226,27 @@
     <property name="title">
      <string>Mitglieder</string>
     </property>
+    <widget class="QMenu" name="menuFlugmodelle">
+     <property name="title">
+      <string>Flugmodelle</string>
+     </property>
+     <addaction name="actionanlegen"/>
+     <addaction name="actionzuordnen"/>
+    </widget>
+    <widget class="QMenu" name="menuL_rmpass">
+     <property name="title">
+      <string>Lärmpass</string>
+     </property>
+     <addaction name="actionerstellen"/>
+     <addaction name="actiondrucken"/>
+    </widget>
     <addaction name="actionNeuMitglied"/>
     <addaction name="action_ndern"/>
     <addaction name="actionSuchen"/>
     <addaction name="actionListe"/>
     <addaction name="separator"/>
-    <addaction name="actionFlugmodelle_anlegen"/>
-    <addaction name="actionFlugmodell_zuordnen"/>
-    <addaction name="actionL_rmpass_anlegen"/>
-    <addaction name="actionL_rmpass_drucken"/>
+    <addaction name="menuFlugmodelle"/>
+    <addaction name="menuL_rmpass"/>
    </widget>
    <widget class="QMenu" name="menuDokumente">
     <property name="title">
@@ -310,19 +322,9 @@
     <string>Liste</string>
    </property>
   </action>
-  <action name="actionFlugmodelle_anlegen">
-   <property name="text">
-    <string>Flugmodelle anlegen</string>
-   </property>
-  </action>
   <action name="actionFlugmodell_zuordnen">
    <property name="text">
     <string>Flugmodell zuordnen</string>
-   </property>
-  </action>
-  <action name="actionL_rmpass_anlegen">
-   <property name="text">
-    <string>Lärmpass anlegen</string>
    </property>
   </action>
   <action name="actionL_rmpass_drucken">
@@ -403,6 +405,26 @@
   <action name="actionAdressen">
    <property name="text">
     <string>Adressen</string>
+   </property>
+  </action>
+  <action name="actionanlegen">
+   <property name="text">
+    <string>anlegen</string>
+   </property>
+  </action>
+  <action name="actionzuordnen">
+   <property name="text">
+    <string>zuordnen</string>
+   </property>
+  </action>
+  <action name="actionerstellen">
+   <property name="text">
+    <string>erstellen</string>
+   </property>
+  </action>
+  <action name="actiondrucken">
+   <property name="text">
+    <string>drucken</string>
    </property>
   </action>
  </widget>
